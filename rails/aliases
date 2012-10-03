@@ -1,0 +1,6 @@
+alias r='rails'
+alias c="console"
+alias g='generate'
+alias s='server'
+alias dl="tail -f log/development.log"
+alias cucs='rake cucumber'

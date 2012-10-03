@@ -1,0 +1,3 @@
+alias load-nginx="sudo launchctl load /System/Library/LaunchDaemons/org.nginx.plist"
+alias unload-nginx="sudo launchctl unload /System/Library/LaunchDaemons/org.nginx.plist"
+alias reload-nginx="unload-nginx && load-nginx"
