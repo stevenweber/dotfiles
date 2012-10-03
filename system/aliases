@@ -1,1 +1,6 @@
 alias reload='. ~/.bashrc'
+
+function tarin() {
+  tar -xf $1
+  cd ${1%%.*}
+}
