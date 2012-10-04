@@ -1,0 +1,6 @@
+alias g="git"
+alias gpm="git push origin master"
+
+function gc() {
+  git commit -m "$*"
+}
