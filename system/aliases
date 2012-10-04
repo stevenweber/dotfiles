@@ -1,6 +1,8 @@
 alias reload='. ~/.bashrc'
 alias dotf='$EDITOR ~/.dotfiles'
 
+export ARCHFLAGS="-arch i386 -arch x86_64"
+
 function tarin() {
   tar -xf $1
   cd ${1%%.*}
