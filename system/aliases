@@ -1,4 +1,5 @@
 alias reload='. ~/.bashrc'
+alias dotf='$EDITOR ~/.dotfiles'
 
 function tarin() {
   tar -xf $1
