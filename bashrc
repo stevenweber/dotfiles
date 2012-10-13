@@ -1,5 +1,5 @@
 ALIASES=$(find ~/.dotfiles -type f -name aliases*)
-CONFIGS=$( find ~/.dotfiles \( ! -path '*.git*' \) -name config*)
+CONFIGS=$( find ~/.dotfiles \( ! -path '*.git*' \) -name config )
 ENVS=$(find ~/.dotfiles -type f -name env*)
 
 for config_file in $ALIASES $CONFIGS $ENVS
