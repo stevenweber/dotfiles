@@ -1,1 +1,2 @@
 export EDITOR=vi
+# CDPATH=".:~:~/projects" # could be an issue if it's before autocomplete
