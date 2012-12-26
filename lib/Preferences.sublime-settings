@@ -1,0 +1,64 @@
+// ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+{
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"create_window_at_startup": false,
+	"file_exclude_patterns":
+	[
+		".tags",
+		".tags_sorted_by_file",
+		".gemtags",
+		"*.war"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
+		"log",
+		"coverage"
+	],
+	"font_face": "Menlo",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 12.0,
+	"gutter": true,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_numbers": true,
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"margin": 10,
+	"rulers":
+	[
+		80
+	],
+	"save_on_focus_lost": true,
+	"show_full_path": true,
+	"show_tab_close_buttons": false,
+	"subclim_auto_complete": true,
+	"tab_size": 2,
+	"theme": "Soda Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": false
+}
