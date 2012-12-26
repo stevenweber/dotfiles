@@ -1,9 +1,0 @@
-alias g="git"
-alias gpm="git push origin master"
-alias gaa="git add --all"
-alias gd="git diff --cached"
-alias gadd="gaa && gd"
-
-function gc() {
-  git commit -m "$*"
-}

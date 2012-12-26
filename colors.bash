@@ -72,7 +72,3 @@ On_IBlue='\e[0;104m'    # Blue
 On_IPurple='\e[10;95m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
-
-# http://hg.gerg.ca/vcprompt
-export VCPROMPT_FORMAT="%b%m%u "
-PS1="\h:\w \[$Green\]\$(vcprompt)\[$Color_Off\]\u$ "

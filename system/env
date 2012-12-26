@@ -1,2 +1,0 @@
-export EDITOR=subl
-CDPATH=".:$HOME/projects/"

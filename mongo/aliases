@@ -1,3 +1,0 @@
-alias load-mongo="sudo launchctl load /System/Library/LaunchDaemons/org.mongo.mongod.plist"
-alias unload-mongo="sudo launchctl unload /System/Library/LaunchDaemons/org.mongo.mongod.plist"
-alias reload-mongo="unload-mongo && load-mongo"
