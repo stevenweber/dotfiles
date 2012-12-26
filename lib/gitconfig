@@ -1,0 +1,22 @@
+[user]
+  name =
+  email =
+
+[alias]
+  ci = commit
+  co = checkout
+  st = status
+  praise = blame
+  br = branch
+
+[diff]
+  color = true
+
+[pager]
+  color = true
+
+[status]
+  color = true
+
+[core]
+  editor=vim
