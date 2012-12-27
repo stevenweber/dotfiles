@@ -29,6 +29,11 @@ function pref_context() {
   if [ -a $HOME/.$1.$2 ]; then
     ln -vhfs $HOME/.$1.$2 $HOME/.$1
   fi
+
+  # Ugh!
+  if [ $1 == "ssh" ]; then
+    ssh-add -D
+  fi
 }
 
 function pref() {
