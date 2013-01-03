@@ -1,4 +1,4 @@
-for config_file in aliases colors env functions; do
+for config_file in path aliases colors env functions; do
   source $HOME/.dotfiles/$config_file.bash
 
   # e.g. env.uniq.bash
