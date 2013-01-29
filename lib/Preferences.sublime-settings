@@ -23,7 +23,8 @@
 		".tags",
 		".tags_sorted_by_file",
 		".gemtags",
-		"*.war"
+		"*.war",
+		".DS_Store"
 	],
 	"folder_exclude_patterns":
 	[
