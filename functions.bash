@@ -11,10 +11,6 @@ function tarin() {
   cd ${1%%.*}
 }
 
-function alive() {
-  ps ax | grep $1
-}
-
 function any() {
   mdfind -onlyin . $1
 }
