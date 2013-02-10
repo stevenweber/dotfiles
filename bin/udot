@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# 2013-02-10
+# Checkout latest .dotfiles
+# Assumes a mac and  .dotfiles root in ~/
+
+pwd | pbcopy &&
+cd ~/.dotfiles/ &&
+git pull --rebase &&
+cd "$(pbpaste)"
