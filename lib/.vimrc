@@ -25,7 +25,7 @@ syntax enable
 " ----------------------------------------------------------------------------
 
 " lead with ,
-let mapleader = ","
+" let mapleader = ","
 
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
@@ -63,6 +63,7 @@ set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
 set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
+colorscheme twilight
 
 
 " ----------------------------------------------------------------------------
@@ -86,3 +87,4 @@ function! StripWhitespace ()
     exec ':%s/ \+$//gc'
 endfunction
 map ,s :call StripWhitespace ()<CR>
+

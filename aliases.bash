@@ -1,6 +1,9 @@
 # Git
-alias gaa="git add --all"
+pretty='--pretty=format:%C(green)%h%C(yellow)%d%Creset %s %C(cyan)%an, %ar%Creset'
+alias gl='git log "$pretty" --graph'
+alias gs="git status --short"
 alias gd="git diff --cached"
+alias gaa="git add --all"
 alias gadd="gaa && gd"
 
 # Java
