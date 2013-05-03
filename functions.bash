@@ -1,7 +1,3 @@
-function gc() {
-  git commit -m "$*"
-}
-
 function copy() {
  cat $1 | pbcopy
 }
