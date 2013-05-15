@@ -12,7 +12,6 @@ if has("autocmd")
   filetype indent on
 endif
 
-inoremap # X<BS>#
 set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
@@ -39,7 +38,7 @@ set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set scrolloff=3
-set colorcolumn=+1,+3  " highlight three columns after 'textwidth'
+set colorcolumn=+1  " highlight three columns after 'textwidth'
 set showmatch              " brackets/braces that is
 set mat=5                  " duration to show matching brace (1/10 sec)
 set incsearch              " do incremental searching
