@@ -1,59 +1,29 @@
-" Stolen from fromhttps://github.com/holman/dotfiles/blob/master/vim/vimrc.symlink
+" Originating from https://github.com/holman/dotfiles/blob/master/vim/vimrc.symlink
 
-" set noswapfile
+set noswapfile
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" ----------------------------------------------------------------------------
-"  Text Formatting
+"  Formatting
 " ----------------------------------------------------------------------------
 
 set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
+" set smartindent            " be smart about it
 inoremap # X<BS>#
 set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
-set tabstop=4
+set tabstop=2
 set expandtab              " expand tabs to spaces
 set nosmarttab             " fuck tabs
-set formatoptions+=n       " support for numbered/bullet lists
-"set textwidth=80           " wrap at 80 chars by default
-set virtualedit=block      " allow virtual edit in visual block ..
+set formatoptions+=n
+set textwidth=120
 syntax enable
 
-" ----------------------------------------------------------------------------
-"  Remapping
-" ----------------------------------------------------------------------------
-
-" lead with ,
-let mapleader = ","
-
-" exit to normal mode with 'jj'
-inoremap jj <ESC>
-
-
-" reflow paragraph with Q in normal and visual mode
-nnoremap Q gqap
-vnoremap Q gq
-
-" sane movement with wrap turned on
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
-
-" ----------------------------------------------------------------------------
 "  UI
 " ----------------------------------------------------------------------------
 
 set ruler                  " show the cursor position all the time
 set noshowcmd              " don't display incomplete commands
-set nolazyredraw           " turn off lazy redraw
 set number                 " line numbers
 set wildmenu               " turn on wild menu
 set wildmode=list:longest,full
@@ -64,27 +34,27 @@ set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set scrolloff=3
-
-colorscheme twilight
-
-
-" ----------------------------------------------------------------------------
-" Visual Cues
-" ----------------------------------------------------------------------------
-
+set colorcolumn=+1,+3  " highlight three columns after 'textwidth'
 set showmatch              " brackets/braces that is
 set mat=5                  " duration to show matching brace (1/10 sec)
 set incsearch              " do incremental searching
 set laststatus=2           " always show the status line
 set ignorecase             " ignore case when searching
-set nohlsearch             " don't highlight searches
 set visualbell             " shut the fuck up
+set fillchars+=vert:\
 
+colorscheme twilight-tweaked
 
+"  UX
 " ----------------------------------------------------------------------------
+
+let mapleader = ","
+map ,r :so $MYVIMRC<CR>
+inoremap jj <ESC>
+autocmd BufWritePre * :%s/\s\+$//e
+
 "  RSpec
 " ----------------------------------------------------------------------------
-
 noremap <Leader>rs :call RunSpec('spec', '-fp')<CR>
 noremap <Leader>rd :call RunSpec(expand('%:h'), '-fd')<CR>
 noremap <Leader>rf :call RunSpec(expand('%'), '-fd')<CR>
@@ -98,13 +68,4 @@ function! RunSpec(spec_path, spec_opts)
     echo '<< WARNING >> RunSpec() can only be called from inside spec files!'
   endif
 endfunction
-
-" ---------------------------------------------------------------------------
-"  Strip all trailing whitespace in file
-" ---------------------------------------------------------------------------
-
-function! StripWhitespace ()
-    exec ':%s/ \+$//gc'
-endfunction
-map ,s :call StripWhitespace ()<CR>
 
