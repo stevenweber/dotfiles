@@ -1,13 +1,17 @@
 " Originating from https://github.com/holman/dotfiles/blob/master/vim/vimrc.symlink
 
+execute pathogen#infect()
 set noswapfile
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "  Formatting
 " ----------------------------------------------------------------------------
 
 set autoindent             " automatic indent new lines
-" set smartindent            " be smart about it
+set smartindent            " be smart about it
+if has("autocmd")
+  filetype indent on
+endif
+
 inoremap # X<BS>#
 set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
@@ -25,6 +29,7 @@ syntax enable
 set ruler                  " show the cursor position all the time
 set noshowcmd              " don't display incomplete commands
 set number                 " line numbers
+set nuw=6
 set wildmenu               " turn on wild menu
 set wildmode=list:longest,full
 set ch=2                   " command line height
