@@ -57,7 +57,7 @@ map ,r :so $MYVIMRC<CR>
 inoremap jj <ESC>
 autocmd BufWritePre * :%s/\s\+$//e
 
-"  RSpec
+"  Ruby
 " ----------------------------------------------------------------------------
 noremap <Leader>rs :call RunSpec('spec', '-fp')<CR>
 noremap <Leader>rd :call RunSpec(expand('%:h'), '-fd')<CR>
@@ -72,4 +72,7 @@ function! RunSpec(spec_path, spec_opts)
     echo '<< WARNING >> RunSpec() can only be called from inside spec files!'
   endif
 endfunction
+
+set iskeyword+=\?
+set iskeyword+=\!
 

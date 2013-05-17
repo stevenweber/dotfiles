@@ -1,3 +1,8 @@
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 for config_file in path aliases colors env functions; do
   source $HOME/.dotfiles/$config_file.bash
 
@@ -7,11 +12,6 @@ for config_file in path aliases colors env functions; do
     source $HOME/.dotfiles/$uniq_config_file
   fi
 done
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
