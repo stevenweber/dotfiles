@@ -7,10 +7,11 @@
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OV05TV2hpdGVcTlNDb2xvclNwYWNlViRjbGFzc0cw
-	IDAuODUAEAOAAtIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09i
-	amVjdF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIUF1kbG5wdYCJ
-	kZSdr7K3AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALk=
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPEC8w
+	LjAzNTgxNDM2ODIxIDAuMDM1ODE0MzY4MjEgMC4wMzU4MTQzNjgyMSAwLjg1ABABgALS
+	EBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tl
+	eWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE5bYpSWmJ2osbm8xdfa3wAAAAAA
+	AAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAADh
 	</data>
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<false/>
@@ -56,6 +57,14 @@
 	TlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSFBdZHBy
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
+	<key>ShowCommandKeyInTitle</key>
+	<false/>
+	<key>ShowDimensionsInTitle</key>
+	<false/>
+	<key>ShowShellCommandInTitle</key>
+	<false/>
+	<key>ShowTTYNameInTitle</key>
+	<false/>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<false/>
 	<key>TextBoldColor</key>
@@ -76,6 +85,8 @@
 	</data>
 	<key>UseBrightBold</key>
 	<false/>
+	<key>WindowTitle</key>
+	<string>Terminal</string>
 	<key>name</key>
 	<string>Pro</string>
 	<key>shellExitAction</key>
