@@ -58,6 +58,7 @@ inoremap jj <ESC>
 autocmd BufWritePre * :%s/\s\+$//e
 let g:netrw_liststyle=3
 let g:ctrlp_show_hidden=1
+map <Leader>h <C-z>
 
 "  Ruby
 " ----------------------------------------------------------------------------
