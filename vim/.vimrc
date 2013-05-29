@@ -79,4 +79,6 @@ endfunction
 set iskeyword+=\?
 set iskeyword+=\!
 set iskeyword+=@-@
+set iskeyword+=:
+set iskeyword+=$
 
