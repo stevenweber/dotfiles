@@ -11,6 +11,7 @@ alias gb="git branch"
 
 # Java
 alias mvn!="mvn clean && mvn install"
+alias report="open target/failsafe-reports"
 
 # OSX
 alias sfiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder && echo 'Showing all files'"
