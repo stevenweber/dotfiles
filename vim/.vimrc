@@ -60,6 +60,9 @@ let g:netrw_liststyle=3
 let g:ctrlp_show_hidden=1
 map <Leader>h <C-z>
 
+command Copypath execute "! echo \"%\" | pbcopy"
+map ,cp :Copypath<CR><CR>,h
+
 "  Ruby
 " ----------------------------------------------------------------------------
 noremap <Leader>rs :call RunSpec('spec', '-fp')<CR>
