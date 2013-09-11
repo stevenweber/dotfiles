@@ -11,6 +11,10 @@ function any() {
   mdfind -onlyin . $1
 }
 
+function uuid() {
+  ruby -e 'require "uuid"; puts UUID.generate'
+}
+
 function reloadp() {
   sudo launchctl unload $1 && sudo launchctl load $1
 }
