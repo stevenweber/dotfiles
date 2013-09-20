@@ -12,7 +12,8 @@ function any() {
 }
 
 function uuid() {
-  ruby -e 'require "uuid"; puts UUID.generate'
+  ruby -e 'require "uuid"; print UUID.generate' | pbcopy
+  echo "$(pbpaste) copied to clipboard"
 }
 
 function reloadp() {
