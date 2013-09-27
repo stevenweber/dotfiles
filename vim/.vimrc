@@ -62,6 +62,7 @@ map <Leader>h <C-z>
 
 command Copypath execute "! echo \"%\" | pbcopy"
 map ,cp :Copypath<CR><CR>,h
+map ,fj :%!python -m json.tool<CR>
 
 "  Git
 " ----------------------------------------------------------------------------
