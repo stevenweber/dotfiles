@@ -6,7 +6,7 @@ export ARCHFLAGS="-arch i386 -arch x86_64"
 
 # Java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_09.jdk/Contents/Home/
-export M2_HOME=/usr/share/maven
+# export M2_HOME=/usr/share/maven
 
 # EC2
 if [ -a $HOME/.ec2 ]; then

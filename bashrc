@@ -1,7 +1,4 @@
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 for config_file in path aliases colors env functions; do
   source $HOME/.dotfiles/$config_file.bash
@@ -30,4 +27,3 @@ fi
 if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
   . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
 fi
-
