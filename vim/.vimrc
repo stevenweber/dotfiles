@@ -54,11 +54,14 @@ colorscheme twilight-tweaked
 
 let mapleader = ","
 map ,r :so $MYVIMRC<CR>
+map <Leader>h <C-z>
+map <tab> <C-W><C-W>
+
 inoremap jj <ESC>
 autocmd BufWritePre * :%s/\s\+$//e
+
 let g:netrw_liststyle=3
 let g:ctrlp_show_hidden=1
-map <Leader>h <C-z>
 
 command Copypath execute "! echo \"%\" | pbcopy"
 map ,cp :Copypath<CR><CR>,h
