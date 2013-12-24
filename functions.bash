@@ -17,7 +17,7 @@ function uuid() {
 }
 
 function reloadp() {
-  sudo launchctl unload $1 && sudo launchctl load $1
+  launchctl unload $1 && launchctl load $1
 }
 
 # Quickly shift preferences/settings
