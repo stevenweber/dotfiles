@@ -15,6 +15,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="$PATH:$HOME/.dotfiles/bin"
 
+bind 'set completion-ignore-case on'
+
 # `brew install bash-completion`
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
