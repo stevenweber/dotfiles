@@ -66,6 +66,11 @@ let g:ctrlp_show_hidden=1
 command Copypath execute "! echo \"%\" | pbcopy"
 map ,cp :Copypath<CR><CR>,h
 map ,fj :%!python -m json.tool<CR>
+map <C-k> :tnext<CR>
+map <C-j> :tprevious<CR>
+map <C-h> :pop<CR>
+
+set foldmethod=syntax
 
 "  Git
 " ----------------------------------------------------------------------------
