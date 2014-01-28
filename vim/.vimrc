@@ -71,6 +71,7 @@ map <C-j> :tprevious<CR>
 map <C-h> :pop<CR>
 
 set foldmethod=syntax
+set foldlevelstart=99
 
 "  Git
 " ----------------------------------------------------------------------------
