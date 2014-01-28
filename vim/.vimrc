@@ -69,6 +69,7 @@ map ,fj :%!python -m json.tool<CR>
 map <C-k> :tnext<CR>
 map <C-j> :tprevious<CR>
 map <C-h> :pop<CR>
+map f za
 
 set foldmethod=syntax
 set foldlevelstart=99
