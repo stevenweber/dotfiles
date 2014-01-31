@@ -9,6 +9,7 @@ alias gc="git commit"
 alias gf="git fetch"
 alias gb="git branch"
 alias gp="ga && gdc" # think prepare
+alias gi="git log -n 2 --summary" # think info
 
 # Java
 alias mvn!="mvn clean && mvn install"
