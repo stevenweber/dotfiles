@@ -1,15 +1,9 @@
 # Git
 pretty='--pretty=format:%C(green)%h%C(yellow)%d%Creset %s %C(cyan)%an, %ar%Creset'
+prettylong='--pretty=format:%C(green)%H%C(yellow)%d%Creset %s %C(cyan)%an, %ar%Creset'
 alias gl='git log "$pretty" --graph -n 12'
-alias gs="git status --short"
-alias gd="git diff"
-alias gdc="git diff --cached"
-alias ga="git add --all"
-alias gc="git commit"
-alias gf="git fetch"
-alias gb="git branch"
+alias gll='git log "$prettylong" --graph -n 12'
 alias gp="ga && gdc" # think prepare
-alias gi="git log -n 2 --summary" # think info
 
 # Java
 alias mvn!="mvn clean && mvn install"
