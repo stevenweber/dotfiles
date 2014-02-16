@@ -3,7 +3,7 @@ pretty='--pretty=format:%C(green)%h%C(yellow)%d%Creset %s %C(cyan)%an, %ar%Crese
 prettylong='--pretty=format:%C(green)%H%C(yellow)%d%Creset %s %C(cyan)%an, %ar%Creset'
 alias gl='git log "$pretty" --graph -n 12'
 alias gll='git log "$prettylong" --graph -n 12'
-alias gp="ga && gdc" # think prepare
+alias gp="git add --all && git diff --cached" # think prepare
 
 # Java
 alias mvn!="mvn clean && mvn install"

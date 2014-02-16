@@ -23,7 +23,7 @@ export MONGO_PLIST=$HOME/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 export NGINX_PLIST=/System/Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 
 # Ruby
-export RUBY_HEAP_MIN_SLOTS=600_000
+export RUBY_GC_HEAP_INIT_SLOTS=600_000
 export RUBY_GC_MALLOC_LIMIT=59_000_000
 export RUBY_HEAP_FREE_MIN=100_000
 
