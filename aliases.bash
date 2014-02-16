@@ -22,7 +22,7 @@ alias cucs='rake cucumber'
 alias be="bundle exec"
 alias bi="bundle install"
 
-alias tags="ctags --sort=yes -R . $(rvm gemdir)"
+alias tags="ctags --sort=yes -R $(rvm gemdir) ."
 
 # Misc
 alias reload='. ~/.bashrc'
