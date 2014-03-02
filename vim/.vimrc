@@ -10,6 +10,7 @@ set autoindent             " automatic indent new lines
 set smartindent            " be smart about it
 if has("autocmd")
   filetype indent on
+  filetype plugin on
 endif
 
 set nowrap                 " do not wrap lines
@@ -21,6 +22,8 @@ set nosmarttab             " fuck tabs
 set formatoptions+=n
 set textwidth=120
 syntax enable
+
+let NERDSpaceDelims=1
 
 "  UI
 " ----------------------------------------------------------------------------
@@ -101,4 +104,3 @@ set iskeyword+=\!
 set iskeyword+=@-@
 set iskeyword+=:
 set iskeyword+=$
-
