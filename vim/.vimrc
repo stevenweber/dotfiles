@@ -13,6 +13,10 @@ if has("autocmd")
   filetype plugin on
 endif
 
+set foldmethod=syntax
+set foldlevelstart=99
+let g:vim_markdown_initial_foldlevel=99
+
 set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
@@ -74,9 +78,6 @@ map <C-j> :tprevious<CR>
 map <C-h> :pop<CR>
 map f za
 map ,sb :%!subl %<CR>
-
-set foldmethod=syntax
-set foldlevelstart=99
 
 "  Git
 " ----------------------------------------------------------------------------
