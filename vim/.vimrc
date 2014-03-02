@@ -70,6 +70,7 @@ map <C-k> :tnext<CR>
 map <C-j> :tprevious<CR>
 map <C-h> :pop<CR>
 map f za
+map ,sb :%!subl %<CR>
 
 set foldmethod=syntax
 set foldlevelstart=99
