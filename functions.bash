@@ -2,22 +2,9 @@ function copy() {
  cat $1 | pbcopy
 }
 
-function tarin() {
-  tar -xf $1
-  cd ${1%%.*}
-}
-
-function any() {
-  mdfind -onlyin . $1
-}
-
 function uuid() {
   ruby -e 'require "uuid"; print UUID.generate' | pbcopy
   echo "$(pbpaste) copied to clipboard"
-}
-
-function reloadp() {
-  launchctl unload $1 && launchctl load $1
 }
 
 # Quickly shift preferences/settings

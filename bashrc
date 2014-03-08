@@ -1,4 +1,5 @@
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# brew install rbenv ruby-build
+eval "$(rbenv init -)"
 
 for config_file in path aliases colors env functions; do
   source $HOME/.dotfiles/$config_file.bash
@@ -10,9 +11,7 @@ for config_file in path aliases colors env functions; do
   fi
 done
 
-### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
 export PATH="$PATH:$HOME/.dotfiles/bin"
 
 bind 'set completion-ignore-case on'
