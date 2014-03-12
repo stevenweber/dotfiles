@@ -11,23 +11,23 @@ set smartindent            " be smart about it
 if has("autocmd")
   filetype indent on
   filetype plugin on
+  au BufRead,BufNewFile *.god setfiletype ruby
 endif
 
 set foldmethod=syntax
 set foldlevelstart=99
 let g:vim_markdown_initial_foldlevel=99
+let NERDSpaceDelims=1
 
-set nowrap                 " do not wrap lines
-set softtabstop=2          " yep, two
-set shiftwidth=2           " ..
+set nowrap
+set softtabstop=2
+set shiftwidth=2
 set tabstop=2
-set expandtab              " expand tabs to spaces
-set nosmarttab             " fuck tabs
+set expandtab
+set nosmarttab
 set formatoptions+=n
 set textwidth=120
 syntax enable
-
-let NERDSpaceDelims=1
 
 "  UI
 " ----------------------------------------------------------------------------
