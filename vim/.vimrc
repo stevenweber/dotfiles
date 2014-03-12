@@ -60,7 +60,7 @@ colorscheme twilight-tweaked
 " ----------------------------------------------------------------------------
 
 let mapleader = ","
-map ,r :so $MYVIMRC<CR>
+map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h <C-z>
 map <tab> <C-W><C-W>
 
@@ -71,18 +71,18 @@ let g:netrw_liststyle=3
 let g:ctrlp_show_hidden=1
 
 command Copypath execute "! echo \"%\" | pbcopy"
-map ,cp :Copypath<CR><CR>,h
-map ,fj :%!python -m json.tool<CR>
+map <Leader>cp :Copypath<CR><CR><Leader>h
+map <Leader>fj :%!python -m json.tool<CR>
 map <C-k> :tnext<CR>
 map <C-j> :tprevious<CR>
 map <C-h> :pop<CR>
 map f za
-map ,sb :%!subl %<CR>
+map <Leader>sb :!subl %<CR><CR>
 
 "  Git
 " ----------------------------------------------------------------------------
 command GitPraise execute "! git praise %"
-map ,gp :GitPraise<CR><CR>
+map <Leader>gp :GitPraise<CR><CR>
 
 "  Ruby
 " ----------------------------------------------------------------------------
