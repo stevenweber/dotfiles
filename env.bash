@@ -1,5 +1,6 @@
 export ARCHFLAGS="-arch i386 -arch x86_64"
 export JAVA_HOME=$(/usr/libexec/java_home)
+export EDITOR=vi
 
 if [ -a $HOME/.ec2 ]; then
   export EC2_HOME=/opt/ec2-tools/1.6.5.2
