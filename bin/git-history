@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Sort remote branches by latest commit and display in vivid color.
+
+HISTORY_FORMAT='%Cgreen%ci %Cred%cr%Creset'
+
+for branch in `git br -r`
+do
+  echo "$(git log -n 1 --pretty=format:"$HISTORY_FORMAT" $branch) $branch"
+done | sort --ignore-leading-blanks --field-separator=-
