@@ -92,7 +92,7 @@ map <Leader>rl :call RunNearestSpec()<CR>
 map <Leader>rr :call RunLastSpec()<CR>
 map <Leader>rs :call RunAllSpecs()<CR>
 
-let g:rspec_command = "!bundle exec rspec -fd {spec}"
+let g:rspec_command = "!bundle exec rspec -fd -d {spec}"
 
 set iskeyword+=\?
 set iskeyword+=\!
