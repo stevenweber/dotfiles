@@ -19,3 +19,5 @@ alias bi="bundle install"
 
 # Misc
 alias reload='. ~/.bashrc'
+
+alias vi="mvim -v"

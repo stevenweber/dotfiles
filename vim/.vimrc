@@ -59,6 +59,7 @@ colorscheme twilight-tweaked
 "  UX
 " ----------------------------------------------------------------------------
 
+set clipboard+=unnamed
 let mapleader = ","
 map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h <C-z>
