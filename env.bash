@@ -3,7 +3,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export EDITOR=vi
 
 if [ -a $HOME/.ec2 ]; then
-  export EC2_HOME=/opt/ec2-tools/1.6.5.2
+  export EC2_HOME=/opt/ec2-api-tools
   export PATH=$PATH:$EC2_HOME/bin
   export EC2_URL=https://ec2.us-east-1.amazonaws.com
   # EC2_PRIVATE_KEY, EC2_CERT, `ls ../pk-*.pem`
