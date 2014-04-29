@@ -70,6 +70,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 let g:netrw_liststyle=3
 let g:ctrlp_show_hidden=1
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|bower_components|node_modules)$' } " or file, link
 
 command Copypath execute "! echo \"%\" | pbcopy"
 map <Leader>cp :Copypath<CR><CR><Leader>h
