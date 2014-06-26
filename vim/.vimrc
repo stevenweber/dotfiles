@@ -63,9 +63,11 @@ set clipboard+=unnamed
 let mapleader = ","
 map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h <C-z>
-map <tab> <C-W><C-W>
 
 inoremap jj <ESC>
+nnoremap <C-j> <C-w>h
+nnoremap <C-k> <C-w>l
+
 autocmd BufWritePre * :%s/\s\+$//e
 
 let g:netrw_liststyle=3
@@ -75,16 +77,8 @@ let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|bower_components|node_module
 command Copypath execute "! echo \"%\" | pbcopy"
 map <Leader>cp :Copypath<CR><CR><Leader>h
 map <Leader>fj :%!python -m json.tool<CR>
-map <C-k> :tnext<CR>
-map <C-j> :tprevious<CR>
-map <C-h> :pop<CR>
-map f za
-map <Leader>sb :!subl %<CR><CR>
 
-"  Git
-" ----------------------------------------------------------------------------
-command GitPraise execute "! git praise %"
-map <Leader>gp :GitPraise<CR><CR>
+map <space> za
 
 "  Ruby
 " ----------------------------------------------------------------------------
