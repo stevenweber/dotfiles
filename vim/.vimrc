@@ -65,8 +65,10 @@ map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h <C-z>
 
 inoremap jj <ESC>
-nnoremap <C-j> <C-w>h
-nnoremap <C-k> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 autocmd BufWritePre * :%s/\s\+$//e
 
