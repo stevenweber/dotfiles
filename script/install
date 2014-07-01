@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+
+source ~/.bashrc
+
+# Symlink config files to home dir
+for config_file in configs/*; do
+  target_file=$HOME/.${config_file#*/}
+
+  if [ -f $target_file ]; then
+    echo "$target_file exists, skipping"
+  else
+    ln -s $HOME/.dotfiles/$config_file $target_file
+  fi
+done
+
+# Install Homebrew
+if hash brew 2>/dev/null; then
+  echo "Homebrew already installed"
+else
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+fi
+
+# Dependencies via brew
+brew install bash-completion vcprompt rbenv ruby-build
+
+git submodule update --recursive
+
+reload

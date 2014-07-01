@@ -1,3 +1,2 @@
-*.uniq*
+etc/secret
 *.swp
-

@@ -1,31 +1,14 @@
-# brew install rbenv ruby-build
-eval "$(rbenv init -)"
+export EDITOR=vi
+function reload() {
+  . ~/.bashrc
+}
 
-for config_file in path aliases colors env functions; do
-  source $HOME/.dotfiles/$config_file.bash
-
-  # e.g. env.uniq.bash
-  read uniq_config_file <<< $(echo $config_file | awk '{split($0,a,"."); print a[1]".uniq.bash"}')
-  if [ -a $HOME/.dotfiles/$uniq_config_file ]; then
-    source $HOME/.dotfiles/$uniq_config_file
-  fi
+# Load secrets not tracked in git for security, etc.
+for secret_config in etc/secret/*.bash; do
+  source $HOME/.dotfiles/$secret_config
 done
 
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="$PATH:$HOME/.dotfiles/bin"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-bind 'set completion-ignore-case on'
-
-# `brew install bash-completion`
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
-fi
-
-if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-  . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
-fi
+# Load all config files
+for config_file in etc/*.bash; do
+  source $HOME/.dotfiles/$config_file
+done
