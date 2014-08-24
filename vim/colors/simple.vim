@@ -40,6 +40,7 @@ exec 'hi PreProc ctermfg=' . s:normal
 exec 'hi Operator ctermfg=' . s:normal
 exec 'hi Directory ctermfg=' . s:special
 exec 'hi ColorColumn ctermbg=' . s:normal
+exec 'hi FoldColumn cterm=none ctermbg=' . s:hidden . ' ctermfg=' . s:hidden
 
 exec 'hi ExtraWhitespace ctermbg=' . s:error
 match ExtraWhitespace /\s\+$/
