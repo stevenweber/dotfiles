@@ -3,11 +3,11 @@
 execute pathogen#infect()
 set noswapfile
 
-"  Formatting
-" ----------------------------------------------------------------------------
+" Formatting
+" ----------
 
-set autoindent             " automatic indent new lines
-set smartindent            " be smart about it
+set autoindent
+set smartindent
 if has("autocmd")
   filetype indent on
   filetype plugin on
@@ -30,7 +30,7 @@ set textwidth=120
 syntax enable
 
 "  UI
-" ----------------------------------------------------------------------------
+" ---
 
 set ruler                  " show the cursor position all the time
 set noshowcmd              " don't display incomplete commands
@@ -52,19 +52,18 @@ set incsearch              " do incremental searching
 set laststatus=2           " always show the status line
 set ignorecase             " ignore case when searching
 set visualbell             " shut the fuck up
-set fillchars+=vert:\
+set fillchars+=vert: 
 
-colorscheme twilight-tweaked
+colorscheme simple
 
 "  UX
-" ----------------------------------------------------------------------------
+" ---
 
 set clipboard+=unnamed
 let mapleader = ","
 map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h <C-z>
 
-inoremap jj <ESC>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -76,14 +75,12 @@ let g:netrw_liststyle=3
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|bower_components|node_modules)$' } " or file, link
 
-command Copypath execute "! echo \"%\" | pbcopy"
-map <Leader>cp :Copypath<CR><CR><Leader>h
 map <Leader>fj :%!python -m json.tool<CR>
 
 map <space> za
 
 "  Ruby
-" ----------------------------------------------------------------------------
+" -----
 
 map <Leader>rf :call RunCurrentSpecFile()<CR>
 map <Leader>rl :call RunNearestSpec()<CR>
