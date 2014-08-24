@@ -12,6 +12,7 @@ if has("autocmd")
   filetype indent on
   filetype plugin on
   au BufRead,BufNewFile *.god setfiletype ruby
+  au InsertLeave * if expand('%') != '' | update | endif
 endif
 
 set foldmethod=syntax
@@ -77,7 +78,6 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|bower_components|node_modules)$' } " or file, link
 
 map <Leader>fj :%!python -m json.tool<CR>
-
 map <space> za
 
 "  Ruby

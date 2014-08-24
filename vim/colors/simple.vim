@@ -12,6 +12,7 @@ let s:normal = 237
 let s:light = 246
 let s:bright = 255
 let s:hidden = 235
+
 let s:meaningful = 183
 let s:special = 208
 let s:alternative = 100
@@ -21,7 +22,7 @@ let s:error = 160
 exec 'hi Normal ctermfg=' . s:light
 " hi Visual
 exec 'hi LineNr ctermfg=' . s:normal
-exec 'hi StatusLine ctermbg=' . s:light . ' ctermfg=' . s:hidden
+exec 'hi StatusLine cterm=none ctermbg=' . s:normal . ' ctermfg=' . s:light
 exec 'hi StatusLineNC ctermbg=' . s:hidden . ' ctermfg=' . s:hidden
 exec 'hi VertSplit ctermfg=' . s:hidden . ' ctermbg=' . s:hidden
 exec 'hi Comment ctermfg=' . s:normal

@@ -42,17 +42,17 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AqAAAAAAAAEBCAAoADXxATU291cmNlQ29kZVByby1MaWdodNITFBUWWiRjbGFz
-	c25hbWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy
-	0RobVHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eI6TnqeusbrMz9QAAAAAAAABAQAAAAAA
-	AAAcAAAAAAAAAAAAAAAAAAAA1g==
+	YXNzI0AmAAAAAAAAEBCAAoADXxAYU291cmNlQ29kZVByby1FeHRyYUxpZ2h00hMUFRZa
+	JGNsYXNzbmFtZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJj
+	aGl2ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4k5ijrLO2v9HU2QAAAAAAAAEB
+	AAAAAAAAABwAAAAAAAAAAAAAAAAAAADb
 	</data>
 	<key>FontAntialias</key>
-	<false/>
+	<true/>
 	<key>FontHeightSpacing</key>
-	<real>1.3999999999999999</real>
+	<real>1.3</real>
 	<key>FontWidthSpacing</key>
-	<integer>1</integer>
+	<real>0.90000000000000002</real>
 	<key>Linewrap</key>
 	<true/>
 	<key>ProfileCurrentVersion</key>
@@ -100,7 +100,7 @@
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
 	<key>UseBoldFonts</key>
-	<false/>
+	<true/>
 	<key>UseBrightBold</key>
 	<true/>
 	<key>WindowTitle</key>
