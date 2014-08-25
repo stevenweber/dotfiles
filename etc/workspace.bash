@@ -4,10 +4,17 @@
 # .ssh => .ssh.context2
 # .ec2 => .ec2.context2
 function pref() {
-  for context in ssh gitconfig ec2; do
+  for context in ssh ec2; do
     __pref_context $context $1
   done
+  __pref_git $1
   reload
+}
+
+function __pref_git() {
+  if [ -a $HOME/.dotfiles/contexts/git/$1 ]; then
+    ln -vhfs $HOME/.dotfiles/contexts/git/$1 $HOME/.gitconfig
+  fi
 }
 
 function __pref_context() {
