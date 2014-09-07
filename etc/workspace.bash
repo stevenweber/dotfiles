@@ -12,8 +12,8 @@ function pref() {
 }
 
 function __pref_git() {
-  if [ -a $HOME/.dotfiles/contexts/git/$1 ]; then
-    ln -vhfs $HOME/.dotfiles/contexts/git/$1 $HOME/.gitconfig
+  if [ -a $DOTFILES/contexts/git/$1 ]; then
+    ln -vhfs $DOTFILES/contexts/git/$1 $HOME/.gitconfig
   fi
 }
 
