@@ -51,6 +51,7 @@ map <Leader>r :so $MYVIMRC<CR>
 map <Leader>h <C-z>
 map <Leader>fj :%!python -m json.tool<CR>
 map <space> za
+map <Leader>cp :let @+ = expand("%")<CR><CR><Leader>h
 
 " RSpec
 map <Leader>rf :call RunCurrentSpecFile()<CR>
