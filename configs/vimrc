@@ -58,7 +58,7 @@ map <Leader>rf :call RunCurrentSpecFile()<CR>
 map <Leader>rl :call RunNearestSpec()<CR>
 map <Leader>rr :call RunLastSpec()<CR>
 map <Leader>rs :call RunAllSpecs()<CR>
-let g:rspec_command = "!bundle exec rspec -fd -d {spec}"
+let g:rspec_command = "!bundle exec rspec -fd {spec}"
 
 " Keywords
 set iskeyword+=\?
