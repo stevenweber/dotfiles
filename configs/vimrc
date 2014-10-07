@@ -53,6 +53,9 @@ map <Leader>fj :%!python -m json.tool<CR>
 map <space> za
 map <Leader>cp :let @+ = expand("%")<CR><CR><Leader>h
 
+" Ruby
+map <leader>fr :!bundle exec rubocop -a %<CR>
+
 " RSpec
 map <Leader>rf :call RunCurrentSpecFile()<CR>
 map <Leader>rl :call RunNearestSpec()<CR>
