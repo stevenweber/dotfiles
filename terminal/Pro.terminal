@@ -15,6 +15,8 @@
 	</data>
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<false/>
+	<key>Bell</key>
+	<false/>
 	<key>CursorBlink</key>
 	<true/>
 	<key>CursorColor</key>
@@ -48,7 +50,7 @@
 	<key>Linewrap</key>
 	<true/>
 	<key>ProfileCurrentVersion</key>
-	<real>2.02</real>
+	<real>2.04</real>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -85,12 +87,14 @@
 	</data>
 	<key>UseBrightBold</key>
 	<false/>
+	<key>VisualBell</key>
+	<false/>
 	<key>WindowTitle</key>
 	<string>Terminal</string>
 	<key>name</key>
 	<string>Pro</string>
 	<key>shellExitAction</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>

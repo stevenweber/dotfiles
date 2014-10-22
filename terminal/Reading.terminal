@@ -19,6 +19,8 @@
 	</data>
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<false/>
+	<key>Bell</key>
+	<false/>
 	<key>BlinkText</key>
 	<true/>
 	<key>CursorBlink</key>
@@ -56,7 +58,7 @@
 	<key>Linewrap</key>
 	<true/>
 	<key>ProfileCurrentVersion</key>
-	<real>2.02</real>
+	<real>2.04</real>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -103,6 +105,8 @@
 	<true/>
 	<key>UseBrightBold</key>
 	<true/>
+	<key>VisualBell</key>
+	<false/>
 	<key>WindowTitle</key>
 	<string>Terminal</string>
 	<key>deleteSendsBackspace</key>
@@ -110,7 +114,7 @@
 	<key>name</key>
 	<string>Reading</string>
 	<key>shellExitAction</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>

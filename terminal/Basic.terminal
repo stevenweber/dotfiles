@@ -12,6 +12,8 @@
 	amVjdF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIUF1kbG5wdYCJ
 	kZSdr7K3AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALk=
 	</data>
+	<key>Bell</key>
+	<false/>
 	<key>Font</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -28,9 +30,13 @@
 	<key>FontWidthSpacing</key>
 	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
-	<real>2.02</real>
+	<real>2.04</real>
+	<key>VisualBell</key>
+	<false/>
 	<key>name</key>
 	<string>Basic</string>
+	<key>shellExitAction</key>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>
