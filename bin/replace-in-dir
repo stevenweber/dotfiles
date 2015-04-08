@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Find and replace in all files from working path.
+# replace foo bar '*.rb'
+
+REPLACE_THIS=$1
+WITH_THIS=$2
+MATCHING=$3
+
+find . -type f -name "$MATCHING" -print0 | xargs -0 sed -i '' "s/$REPLACE_THIS/$WITH_THIS/g"
