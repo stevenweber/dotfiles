@@ -1,4 +1,3 @@
 #!/bin/bash
 
-CURRENT_PATH=$(pwd | tr -d '\n')
-echo $CURRENT_PATH | pbcopy && echo "Copied $CURRENT_PATH"
+pwd | xargs echo -n | pbcopy && echo "Copied $(pwd)"
