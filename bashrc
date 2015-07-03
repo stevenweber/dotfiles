@@ -14,3 +14,6 @@ done
 for config_file in $DOTFILES/etc/*.bash; do
   source $config_file
 done
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
