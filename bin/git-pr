@@ -8,6 +8,5 @@ repo = file.split("\n").detect { |line| line.match(/url\s=\s*/) }
 uri = repo.match(/url\s=\s.*(github.*).git/)[1].gsub(":", "/")
 
 branch = `git rev-parse --abbrev-ref HEAD`.chomp
-branch.gsub!("/", ";")
 
 `open "https://#{uri}/compare/#{branch}?expand=1"`
