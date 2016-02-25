@@ -5,7 +5,7 @@ if has("autocmd")
   filetype plugin on
   au BufRead,BufNewFile *.god setfiletype ruby
   " Autosave
-  au InsertLeave * if expand('%') != '' | update | endif
+  " au InsertLeave * if expand('%') != '' | update | endif
   " Remove whitespace
   au BufWritePre * :%s/\s\+$//e
 endif
