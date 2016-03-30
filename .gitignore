@@ -1,3 +1,4 @@
-etc/secret
+etc/secret/*
 contexts/git/*
 *.swp
+.netrwhist

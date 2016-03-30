@@ -1,28 +1,56 @@
 #! /usr/bin/env bash
 
-source ~/.bashrc
-
-# Symlink config files to home dir
-for config_file in configs/*; do
+# symlink core
+DOTFILES=~/dotfiles
+BASH_CONFIGS=( "bashrc" "bash_profile" )
+for config_file in "${BASH_CONFIGS[@]}"; do
   target_file=$HOME/.${config_file#*/}
 
   if [ -f $target_file ]; then
-    echo "$target_file exists, skipping"
+    echo "[warning] $target_file exists, skipping; move it and run this again"
   else
     ln -s $DOTFILES/$config_file $target_file
   fi
 done
 
-# Install Homebrew
+source ~/.bashrc
+
+# symlink config files to home dir
+for config_file in configs/*; do
+  target_file=$HOME/.${config_file#*/}
+
+  if [ -f $target_file ]; then
+    echo "[warning] $target_file exists, skipping; move it and run this again."
+  else
+    ln -s $DOTFILES/$config_file $target_file
+  fi
+done
+
+# vim config
+if [ -d "~/.vim" ]; then
+  echo "[warning] ~/.vim exists, skipping; move it and run this again."
+else
+  ln -s $DOTFILES/vim ~/.vim
+fi
+
+xcode-select --install
+
+# install homebrewt config --global user.email "{email}"
 if hash brew 2>/dev/null; then
   echo "Homebrew already installed"
 else
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  echo "Please install Homebrew http://brew.sh/"
+  exit 1
 fi
 
-# Dependencies via brew
-brew install bash-completion vcprompt rbenv ruby-build
+# dependencies via brew
+brew install bash-completion vcprompt rbenv ruby-build vim
 
+# vim plugins
+git submodule init
 git submodule update --recursive
+
+echo "Configure git additionally with 'git config --global user.name \"{name}\"'"
+echo "Configure git additionally with 'git config --global user.email \"{email}\"'"
 
 reload
