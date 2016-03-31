@@ -14,6 +14,7 @@ syntax enable
 colorscheme simple
 
 " Basic Settings
+set backspace=2 " weird backspace issue
 set noswapfile
 set autoindent
 set smartindent
