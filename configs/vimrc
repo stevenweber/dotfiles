@@ -24,7 +24,7 @@ set nowrap
 set tabstop=2
 set expandtab
 set shiftwidth=2
-set textwidth=120
+set textwidth=110
 set foldcolumn=2
 set scrolloff=3
 set colorcolumn=+1  " line past textwidth
