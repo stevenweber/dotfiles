@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Usage: git-pull-pr-to 432 what-the-local-branch-should-be
+
+echo "Pulling PR $1 to local branch called $2"
+
+git fetch origin pull/$1/head:$2
+git checkout $2
