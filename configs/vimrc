@@ -20,7 +20,8 @@ set autoindent
 set smartindent
 set foldmethod=syntax
 set foldlevelstart=99
-set nowrap
+set wrap
+set nolist
 set tabstop=2
 set expandtab
 set shiftwidth=2
