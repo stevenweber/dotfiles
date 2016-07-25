@@ -1,0 +1,3 @@
+#!/bin/bash
+# Usage: tail-json log/application.log
+tail -F $1 | while read line; do echo "$line" | python -m json.tool; done
