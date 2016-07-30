@@ -2,3 +2,4 @@ etc/secret/*
 contexts/git/*
 *.swp
 .netrwhist
+.DS_STORE

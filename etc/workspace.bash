@@ -1,25 +1,22 @@
 # Quickly shift workspace config, i.e.
-# pref context2
+#   $ pref context2
+# will symlink the following:
 # .gitconfig => .gitconfig.context2
 # .ssh => .ssh.context2
-# .ec2 => .ec2.context2
+# You could update this to include more like .ec2, etc.
 function pref() {
-  for context in ssh ec2; do
+  for context in gitconfig ssh; do
     __pref_context $context $1
   done
-  __pref_git $1
-  reload
-}
 
-function __pref_git() {
-  if [ -a $DOTFILES/contexts/git/$1 ]; then
-    ln -vhfs $DOTFILES/contexts/git/$1 $HOME/.gitconfig
-  fi
+  reload
 }
 
 function __pref_context() {
   if [ -a $HOME/.$1.$2 ]; then
     ln -vhfs $HOME/.$1.$2 $HOME/.$1
+  else
+    echo "$HOME/.$1.$2 does not exist to symlink $HOME/.$1"
   fi
 
   # Ugh!

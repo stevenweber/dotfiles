@@ -1,5 +1,12 @@
 #! /usr/bin/env bash
 
+echo "Installing dotfiles"
+echo "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+
+log() {
+  echo "dotfiles :: [$1] $2";
+}
+
 # symlink core
 DOTFILES=~/dotfiles
 BASH_CONFIGS=( "bashrc" "bash_profile" )
@@ -7,8 +14,9 @@ for config_file in "${BASH_CONFIGS[@]}"; do
   target_file=$HOME/.${config_file#*/}
 
   if [ -f $target_file ]; then
-    echo "[warning] $target_file exists, skipping; move it and run this again"
+    log "warn" "Not symlinking $DOTFILES/$config_file because $target_file already exists"
   else
+    log "info" "Linked $target_file -> $DOTFILES/$config_file"
     ln -s $DOTFILES/$config_file $target_file
   fi
 done
@@ -20,41 +28,47 @@ for config_file in configs/*; do
   target_file=$HOME/.${config_file#*/}
 
   if [ -f $target_file ]; then
-    echo "[warning] $target_file exists, skipping; move it and run this again."
+    log "warn" "Not symlinking $DOTFILES/$config_file because $target_file already exists"
   else
+    log "info" "Linked $target_file -> $DOTFILES/$config_file"
     ln -s $DOTFILES/$config_file $target_file
   fi
 done
 
 # vim config
-if [ -d "~/.vim" ]; then
-  echo "[warning] ~/.vim exists, skipping; move it and run this again."
+if [ -d "$HOME/.vim" ]; then
+  log "warn" "Not symlinking $DOTFILES/vim because $HOME/.vim already exists"
 else
+  log "info" "Linked $HOME/.vim -> $DOTFILES/vim"
   ln -s $DOTFILES/vim ~/.vim
 fi
 
+log "info" "Installing Xcode tools"
 xcode-select --install
 
-# install homebrewt config --global user.email "{email}"
+log "info" "Installing Homebrew with dependencies"
 if hash brew 2>/dev/null; then
   echo "Homebrew already installed"
 else
-  echo "Please install Homebrew http://brew.sh/"
+  echo "[error] Please install Homebrew http://brew.sh/"
   exit 1
 fi
 
 # dependencies via brew
 brew install bash-completion vcprompt rbenv ruby-build vim
 
-# vim plugins
+log "info" "Installing vim plugins"
 git submodule init
 git submodule update --recursive
 
+log "info" "Setting up git aliases"
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
-echo "Configure git additionally with 'git config --global user.name \"{name}\"'"
-echo "Configure git additionally with 'git config --global user.email \"{email}\"'"
+log "info" "Configure git additionally with 'git config --global user.name \"{name}\"'"
+log "info" "Configure git additionally with 'git config --global user.email \"{email}\"'"
 
 reload
+
+log "info" 'Complete!'
