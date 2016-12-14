@@ -55,7 +55,7 @@ else
 fi
 
 # dependencies via brew
-brew install bash-completion vcprompt rbenv ruby-build vim
+brew install bash-completion vcprompt rbenv ruby-build vim git
 
 log "info" "Installing vim plugins"
 git submodule init
