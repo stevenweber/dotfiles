@@ -65,6 +65,15 @@ map <Leader>rr :call RunLastSpec()<CR>
 map <Leader>rs :call RunAllSpecs()<CR>
 let g:rspec_command = "!bundle exec rspec -fd {spec}"
 
+" Go
+autocmd FileType go nmap <Leader>l :GoDecls<CR>
+autocmd FileType go nmap <Leader>d <Plug>(go-doc)
+autocmd FileType go nmap <Leader>db <Plug>(go-doc-browser)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-rename)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
 " Keywords
 set iskeyword+=\?
 set iskeyword+=\!

@@ -5,7 +5,7 @@
 
 file = File.read(".git/config")
 repo = file.split("\n").detect { |line| line.match(/url\s=\s*/) }
-uri = repo.match(/url\s=\s.*(github.*).git/)[1].gsub(":", "/")
+uri = repo.gsub(/\.git$/, "").match(/url\s=\s.*(github.*)/)[1].gsub(":", "/")
 
 branch = `git rev-parse --abbrev-ref HEAD`.chomp
 

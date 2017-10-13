@@ -2,7 +2,7 @@
 
 file = File.read(".git/config")
 repo = file.split("\n").detect { |line| line.match(/url\s=\s*/) }
-uri = repo.match(/url\s=\s.*(github.*).git/)[1].gsub(":", "/")
+uri = repo.match(/url\s=\s.*(github.*)/)[1].gsub(/\.git$/, "").gsub(":", "/")
 
 uri = case(ARGV[0])
   when "pulls" then "#{uri}/pulls"
