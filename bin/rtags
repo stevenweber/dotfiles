@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if (which 'ripper-tags'); then
+  ripper-tags -R --exclude=vendor --extra=q
+else
+  echo "Install ripper-tags, i.e. 'gem install ripper-tags'";
+fi
