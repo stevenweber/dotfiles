@@ -18,7 +18,7 @@ set backspace=2 " weird backspace issue
 set noswapfile
 set autoindent
 set smartindent
-set foldmethod=syntax
+" set foldmethod=syntax
 set foldlevelstart=99
 set wrap
 set nolist
@@ -40,7 +40,7 @@ let NERDSpaceDelims=1
 let mapleader = ","
 let g:netrw_liststyle=3
 let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|bower_components|node_modules|tmp)$' } " or file, link
+let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|bower_components|node_modules|tmp|doc|dist)$' } " or file, link
 
 " Navigation
 nnoremap <C-j> <C-w>j
