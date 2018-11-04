@@ -32,15 +32,16 @@ exec 'hi FoldColumn cterm=none ctermbg=' . s:hidden . ' ctermfg=' . s:hidden
 " Syntax
 exec 'hi Comment ctermfg=' . s:normal
 exec 'hi TODO ctermbg=none ctermfg=' . s:highlight
-exec 'hi Type ctermfg=' . s:alternative
-exec 'hi Constant ctermfg=' . s:normal
+exec 'hi Type ctermfg=' . s:meaningful
+exec 'hi Constant ctermfg=' . s:meaningful
 exec 'hi String ctermfg=' . s:normal
-exec 'hi Special ctermfg=' . s:normal
-exec 'hi Identifier cterm=none ctermfg=' . s:meaningful
+exec 'hi Special ctermfg=' . s:meaningful
+exec 'hi Identifier cterm=none ctermfg=' . s:normal
 exec 'hi Statement ctermfg=' . s:meaningful
 exec 'hi Repeat ctermfg=' . s:special
 exec 'hi Function ctermfg=' . s:meaningful
 exec 'hi PreProc ctermfg=' . s:normal
 exec 'hi Operator ctermfg=' . s:normal
 exec 'hi ExtraWhitespace ctermbg=' . s:error
+
 match ExtraWhitespace /\s\+$/

@@ -3,7 +3,9 @@ execute pathogen#infect()
 if has("autocmd")
   filetype indent on
   filetype plugin on
+
   au BufRead,BufNewFile *.god setfiletype ruby
+
   " Autosave
   " au InsertLeave * if expand('%') != '' | update | endif
   " Remove whitespace
