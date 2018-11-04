@@ -3,5 +3,5 @@ function tags() {
 }
 
 function jtags() {
-  ctags -R src && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags
+  ctags -R $1 && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags
 }
