@@ -55,7 +55,7 @@ else
 fi
 
 # dependencies via brew
-brew install bash-completion vcprompt rbenv ruby-build vim git ctags awscli
+brew install bash-completion vcprompt rbenv ruby-build vim git ctags awscli convox
 
 log "info" "Installing vim plugins"
 git submodule init
