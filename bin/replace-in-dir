@@ -1,10 +1,11 @@
 #!/bin/sh
 
 # Find and replace in all files from working path.
-# replace foo bar '*.rb'
+# replace ./src '*.js' foo bar
 
-REPLACE_THIS=$1
-WITH_THIS=$2
-MATCHING=$3
+ROOT=$1
+MATCHING=$2
+REPLACE_THIS=$3
+WITH_THIS=$4
 
-find . -type f -name "$MATCHING" -print0 | xargs -0 sed -i '' "s/$REPLACE_THIS/$WITH_THIS/g"
+find $ROOT -type f -name $MATCHING -print0 | xargs -0 sed -i '' "s/$REPLACE_THIS/$WITH_THIS/g"
