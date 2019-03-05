@@ -28,6 +28,8 @@ exec 'hi VertSplit ctermfg=' . s:hidden . ' ctermbg=' . s:hidden
 exec 'hi Directory ctermfg=' . s:special
 exec 'hi ColorColumn ctermbg=' . s:normal
 exec 'hi FoldColumn cterm=none ctermbg=' . s:hidden . ' ctermfg=' . s:hidden
+exec 'hi SignColumn cterm=none ctermbg=' . s:hidden . ' ctermfg=' . s:hidden
+exec 'hi SpellBad cterm=none ctermbg=' . s:hidden . ' ctermfg=' . s:error
 
 " Syntax
 exec 'hi Comment ctermfg=' . s:normal

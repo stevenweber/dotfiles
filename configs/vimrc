@@ -80,6 +80,12 @@ let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:deoplete#enable_at_startup = 1
 
+" Ale
+let g:ale_linters_ignore = {'typescript': ['eslint']}
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+
 " Keywords
 set iskeyword+=\?
 set iskeyword+=\!
