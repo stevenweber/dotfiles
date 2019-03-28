@@ -69,7 +69,7 @@ map <Leader>rr :call RunLastSpec()<CR>
 map <Leader>rs :call RunAllSpecs()<CR>
 let g:rspec_command = "!bundle exec rspec -fd {spec}"
 
-" Go
+" Go lang
 let g:go_fmt_command = "goimports"
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
@@ -80,12 +80,15 @@ let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:deoplete#enable_at_startup = 1
+let g:go_def_mode = 'godef'
 
 " Ale
 let g:ale_linters_ignore = {'typescript': ['eslint']}
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
 
 " Keywords
 set iskeyword+=\?
