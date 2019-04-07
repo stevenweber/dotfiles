@@ -69,6 +69,11 @@ git config --global alias.st status
 log "info" "Configure git additionally with 'git config --global user.name \"{name}\"'"
 log "info" "Configure git additionally with 'git config --global user.email \"{email}\"'"
 
+# https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
+log "info" "Trusting bash 5 to use as shell"
+sudo bash -c 'echo "/usr/local/bin/bash" >> /etc/shells'
+chsh -s /usr/local/bin/bash
+
 reload
 
 log "info" 'Complete!'
