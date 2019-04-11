@@ -3,7 +3,7 @@
 # Go to PR request page for current branch.
 # *NOTE* This anticipates that the remote branch has the same naming.
 
-file = File.read(".git/config")
+file = File.exists?(".git/config") ? File.read(".git/config") : File.read("../.git/config") # monorepos
 repo = file.split("\n").detect { |line| line.match(/url\s=\s*/) }
 uri = repo.match(/url\s=\s.*(github.*).git/)[1].gsub(":", "/")
 
