@@ -3,12 +3,10 @@
 ## Installation
 
 ```
-script/install
+make
 ```
 
-This install script will
-
-- Symlink all config files in configs to their respective hidden file in your home directory
-- Install homebrew
-- Install various dependencies via homebrew
-- Pull git submodules, e.g. vim plugins
+- Symlinks dotfiles files in home
+- Installs homebrew and configured dependencies
+- Installs vim with included themes (and configured plugins)
+- Configures git

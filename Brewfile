@@ -1,0 +1,7 @@
+brew "vim"
+brew "rbenv"
+brew "ruby-build"
+brew "git"
+brew "ctags"
+brew "awscli"
+brew "convox"

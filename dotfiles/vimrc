@@ -1,4 +1,4 @@
-execute pathogen#infect()
+source ${HOME}/dotfiles/vim-config/plug.vim
 
 if has("autocmd")
   filetype indent on
@@ -52,6 +52,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+nnoremap <C-p> :FZF<CR>
 
 " Helpers
 map <Leader>r :so $MYVIMRC<CR>

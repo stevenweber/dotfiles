@@ -1,0 +1,35 @@
+clear
+export EDITOR=vi
+export DOTFILES=${HOME}/dotfiles
+
+autoload -U colors && colors
+# enable tab-completion in cd path
+autoload -U compinit && compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function reload() {
+  . ~/.zshrc
+}
+
+# Load secrets not tracked in git for security, etc.
+for secret_config in ${DOTFILES}/etc/secret/*.zsh; do
+  source $secret_config
+done
+# Load all config files
+for config_file in ${DOTFILES}/etc/*.zsh; do
+  source $config_file
+done
+
+# git in the prompt
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats '%b'
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+#PROMPT="%n@%m %1~ %#"
+#PROMPT='%~ %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} × '
+#PROMPT='⤏  '
+PROMPT='› '
+#PROMPT='⨳ '
+#PROMPT='⩕ '
