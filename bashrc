@@ -14,3 +14,5 @@ done
 for config_file in $DOTFILES/etc/*.bash; do
   source $config_file
 done
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

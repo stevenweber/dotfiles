@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale'
 

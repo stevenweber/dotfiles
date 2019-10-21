@@ -4,12 +4,12 @@ if has("autocmd")
   filetype indent on
   filetype plugin on
 
-  au BufRead,BufNewFile *.god setfiletype ruby
-
-  " Autosave
-  " au InsertLeave * if expand('%') != '' | update | endif
   " Remove whitespace
   au BufWritePre * :%s/\s\+$//e
+
+  autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
+  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,*.god} set ft=ruby
+
 endif
 
 syntax enable
@@ -20,7 +20,7 @@ set backspace=2 " weird backspace issue
 set noswapfile
 set autoindent
 set smartindent
-" set foldmethod=syntax
+set foldmethod=syntax
 set foldlevelstart=99
 set wrap!
 set nolist
@@ -41,9 +41,6 @@ let g:netrw_dirhistmax=0
 let NERDSpaceDelims=1
 let mapleader = ","
 let g:netrw_liststyle=3
-let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore = { 'dir':  '\v[\/](\.git|bower_components|node_modules|tmp|doc|dist)$' } " or file, link
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:netrw_banner = 0
 set signcolumn=yes
 
@@ -85,12 +82,18 @@ let g:deoplete#enable_at_startup = 1
 let g:go_def_mode = 'godef'
 
 " Ale
-let g:ale_linters_ignore = {'typescript': ['eslint']}
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
+"let g:ale_linters_ignore = {'typescript': ['eslint']}
+let g:ale_linters = { 'go': ['go build', 'golint'] }
+let g:ale_sign_error = '- '
+let g:ale_sign_warning = '-'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
+
+" NERDCommenter:
+let NERDDefaultNesting = 0
+let NERDRemoveExtraSpaces = 1
+let NERDSpaceDelims = 1
 
 " Keywords
 set iskeyword+=\?
