@@ -28,9 +28,11 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 # PROMPT="%n@%m %1~ %#"
-# PROMPT='%~ %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} × '
-# PROMPT='⤏  '
-# PROMPT='› '
-# PROMPT='⨳ '
+# PROMPT=' %~ %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} × '
+# PROMPT=' %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} ⤏  '
+# PROMPT=' ⤏  '
+# PROMPT=' › '
+# PROMPT=' ⨳  '
 # PROMPT='⩕ '
-PROMPT=''
+PROMPT=' '
+# PROMPT='%{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} '
