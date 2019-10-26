@@ -1,7 +1,11 @@
 DOTFILES := $(patsubst %, ${HOME}/.%, $(shell ls dotfiles))
 
 .PHONY: install
-install: $(DOTFILES) install-brew install-vim-plugins ${HOME}/.gitconfig
+install: xcode $(DOTFILES) install-brew install-vim-plugins ${HOME}/.gitconfig
+
+.PHONY: xcode
+xcode:
+	xcode-select --install
 
 .PHONY: $(DOTFILES)
 $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/dotfiles/%

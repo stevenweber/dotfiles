@@ -22,6 +22,12 @@ for config_file in ${DOTFILES}/etc/*.zsh; do
 done
 
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+
+export FZF_DEFAULT_COMMAND='
+  (git ls-tree -r --name-only HEAD ||
+   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+      sed s/^..//) 2> /dev/null'
 
 # git in the prompt
 autoload -Uz vcs_info
@@ -32,9 +38,9 @@ setopt prompt_subst
 # PROMPT="%n@%m %1~ %#"
 # PROMPT=' %~ %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} × '
 # PROMPT=' %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} ⤏  '
-# PROMPT=' ⤏  '
 # PROMPT=' › '
 # PROMPT=' ⨳  '
 # PROMPT='⩕ '
-PROMPT=' '
+PROMPT=' ⤏  '
+# PROMPT=' '
 # PROMPT='%{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} '
