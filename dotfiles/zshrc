@@ -41,6 +41,6 @@ setopt prompt_subst
 # PROMPT=' › '
 # PROMPT=' ⨳  '
 # PROMPT='⩕ '
-PROMPT=' ⤏  '
+PROMPT=' %{$fg[cyan]%}⤏ %{$reset_color%} '
 # PROMPT=' '
 # PROMPT='%{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} '
