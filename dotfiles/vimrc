@@ -20,8 +20,7 @@ set backspace=2 " weird backspace issue
 set noswapfile
 set autoindent
 set smartindent
-set foldmethod=syntax
-set foldlevelstart=99
+set foldmethod=manual
 set wrap!
 set nolist
 set tabstop=2
