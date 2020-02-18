@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# get number top contributors to subdir or file
+# https://stackoverflow.com/questions/4589731/git-blame-commit-statistics
+
+# find commit stats broken down by user
+# git-analytics 'app/subdir'
+# no wildcards necessary
+
+# find commit stats for a user, broken down by file
+# git-analytics 'app/subdir' steve
+
+if [ $# -eq 1 ]
+then
+  git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD | grep  "^author " | sort | uniq -c | sort -nr
+else
+  git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD | grep -i -A9 "author $2" | grep "^filename " | sort | uniq -c | sort -nr
+fi
