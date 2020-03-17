@@ -45,5 +45,6 @@ exec 'hi Function ctermfg=' . s:meaningful
 exec 'hi PreProc ctermfg=' . s:normal
 exec 'hi Operator ctermfg=' . s:normal
 exec 'hi ExtraWhitespace ctermbg=' . s:error
+exec 'hi EndOfBuffer ctermfg=' . s:normal
 
 match ExtraWhitespace /\s\+$/
