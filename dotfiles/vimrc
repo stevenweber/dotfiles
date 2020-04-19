@@ -9,7 +9,6 @@ if has("autocmd")
 
   autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,*.god} set ft=ruby
-
 endif
 
 syntax enable
@@ -82,7 +81,7 @@ let g:go_def_mode = 'godef'
 
 " Ale
 " let g:ale_linters_ignore = {'typescript': ['eslint']}
-let g:ale_linters = { 'go': ['go build', 'golint'], 'ts': ['eslint'] }
+let g:ale_linters = { 'go': ['go build', 'golint'] }
 let g:ale_sign_error = '- '
 let g:ale_sign_warning = '-'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
