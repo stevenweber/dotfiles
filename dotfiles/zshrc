@@ -24,10 +24,7 @@ done
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
-export FZF_DEFAULT_COMMAND='
-  (git ls-tree -r --name-only HEAD ||
-   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
-      sed s/^..//) 2> /dev/null'
+export FZF_DEFAULT_COMMAND='find . -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./.next/*" | sed s/^..// 2> /dev/null'
 
 # case-insensitive tab autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
