@@ -86,7 +86,7 @@ let g:ale_sign_error = '- '
 let g:ale_sign_warning = '-'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarning ctermfg=yellow
-nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader><leader> :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
 
 " NERDCommenter:
