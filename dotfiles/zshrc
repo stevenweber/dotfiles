@@ -24,7 +24,22 @@ done
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
-export FZF_DEFAULT_COMMAND='find . -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./.next/*" | sed s/^..// 2> /dev/null'
+export FZF_DEFAULT_COMMAND='
+find . \
+  -not -path "./.git/*" \
+  -not -path "./node_modules/*" \
+  -not -path "./.next/*" \
+  -not -path "./tags" \
+  -not -path "./vendor/*" \
+  -not -path "./log/*" \
+  -not -path "./tmp/*" \
+  -not -path "./*.jpg" \
+  -not -path "./*.jpeg" \
+  -not -path "./*.png" \
+  -not -path "./*.svg" \
+  -not -path "./*.ttf" \
+  -type f \
+| sed s/^..// 2> /dev/null'
 
 # case-insensitive tab autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
