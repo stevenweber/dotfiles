@@ -1,12 +1,7 @@
-#!/usr/bin/env ruby
+#!/bin/bash
 
-# Go to PR request page for current branch.
-# *NOTE* This anticipates that the remote branch has the same naming.
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BASE_URL=https://$(git remote -v | grep origin | grep push | sed 's/\(.*\)git@\(github.com:reverbdotcom\/.*\)\(.git.*\)/\2/g' | sed 's/:/\//')
 
-file = File.exists?(".git/config") ? File.read(".git/config") : File.read("../.git/config") # monorepos
-repo = file.split("\n").detect { |line| line.match(/url\s=\s*/) }
-uri = repo.match(/url\s=\s.*(github.*).git/)[1].gsub(":", "/")
-
-branch = `git rev-parse --abbrev-ref HEAD`.chomp
-
-`open "https://#{uri}/compare/#{branch}?expand=1"`
+git push origin head:$BRANCH -f
+open "$BASE_URL/compare/$BRANCH?expand=1"
