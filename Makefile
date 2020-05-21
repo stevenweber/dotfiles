@@ -1,11 +1,12 @@
 DOTFILES := $(patsubst %, ${HOME}/.%, $(shell ls dotfiles))
+ZSH_FILES = /usr/local/share/zsh /usr/local/share/zsh/site-functions
 
 .PHONY: install
-install: xcode $(DOTFILES) install-brew install-vim-plugins ${HOME}/.gitconfig
+install: xcode $(DOTFILES) install-brew remove-group-from-zsh install-vim-plugins ${HOME}/.gitconfig
 
 .PHONY: xcode
 xcode:
-	xcode-select --install
+	-xcode-select --install
 
 .PHONY: $(DOTFILES)
 $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/dotfiles/%
@@ -15,6 +16,10 @@ $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/dotfiles/%
 install-brew:
 	@if hash brew 2>/dev/null; then echo "* Homebrew already installed, skipping"; else echo "Installing Homebrew"; ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; fi
 	brew bundle
+
+.PHONY: remove-group-from-zsh
+remove-group-from-zsh:
+	for file in ${ZSH_FILES}; do chmod g-w $$file; done
 
 .PHONY: clean
 clean: unlink-dotfiles
