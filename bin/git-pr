@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-BASE_URL=https://$(git remote -v | grep origin | grep push | sed 's/\(.*\)git@\(github.com:reverbdotcom\/.*\)\(.git.*\)/\2/g' | sed 's/:/\//')
+BASE_URL=https://$(git remote -v | grep origin | grep push | sed 's/\(.*\)git@\(github.com:.*\/.*\)\(.git.*\)/\2/g' | sed 's/:/\//')
 
 git push origin head:$BRANCH -f
 open "$BASE_URL/compare/$BRANCH?expand=1"
