@@ -2,7 +2,7 @@ DOTFILES := $(patsubst %, ${HOME}/.%, $(shell ls dotfiles))
 ZSH_FILES = /usr/local/share/zsh /usr/local/share/zsh/site-functions
 
 .PHONY: install
-install: xcode $(DOTFILES) install-brew remove-group-from-zsh install-vim-plugins ${HOME}/.gitconfig
+install: xcode $(DOTFILES) install-brew remove-group-from-zsh install-vim-plugins ${HOME}/.gitconfig enable-key-repeat
 
 .PHONY: xcode
 xcode:
@@ -63,3 +63,7 @@ install-nvim: get-nvim $(NVIM_PLUG)
 	mkdir -p ${HOME}/.config/nvim
 	@ln -s ${HOME}/dotfiles/vim-config/colors ${HOME}/.config/nvim/colors 2>/dev/null && echo "Linking ${HOME}/dotfiles/vim-config/colors to ${HOME}/.config/nvim/colors" || echo "* ${HOME}/.config/nvim/colors already exists, skipping linking"
 	@ln -s ${HOME}/dotfiles/dotfiles/vimrc ${HOME}/.config/nvim/init.vim 2>/dev/null && echo "Linking ${HOME}/dotfiles/dotfiles/vimrc to ${HOME}/.config/nvim/init.vim" || echo "* ${HOME}/.config/nvim/init.vim already exists, skipping linking"
+
+.PHONY: enable-key-repeat
+enable-key-repeat:
+	defaults write -g ApplePressAndHoldEnabled -bool false
