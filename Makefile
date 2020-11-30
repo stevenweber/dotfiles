@@ -39,6 +39,7 @@ ${HOME}/.gitconfig:
 	git config --global alias.br branch
 	git config --global alias.ci commit
 	git config --global alias.st status
+	git config --global pull.rebase true
 	@read -p "Enter Your Full Name for Git Commits: " name; \
 		read -p "Enter Your Email for Git Commits: " email; \
 		git config --global user.name "$$name"; \
