@@ -1,0 +1,8 @@
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics/LineLength:
+  Max: 200
+
+Style/TrailingComma:
+  EnforcedStyle: comma

@@ -24,6 +24,9 @@ done
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
+export HISTSIZE=100000
+export SAVEHIST=100000
+
 export FZF_DEFAULT_COMMAND='
 if [ -d .git ];
   then echo "$(git ls-files)\n$(git status --untracked-files=all --porcelain | grep "^[A\?]" | cut -c 4-)" | sort | uniq;
