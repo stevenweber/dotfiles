@@ -28,6 +28,10 @@ eval "$(pyenv init --path)"
 export HISTSIZE=100000
 export SAVEHIST=100000
 
+# prevent vscode vim bindings from mucking with ctr-a etc
+# https://code.visualstudio.com/docs/editor/integrated-terminal#_ctrla-ctrlr-output-a-r-on-zsh
+bindkey -e
+
 export FZF_DEFAULT_COMMAND='
 if [ -d .git ];
   then echo "$(git ls-files)\n$(git status --untracked-files=all --porcelain | grep "^[A\?]" | cut -c 4-)" | sort | uniq;
