@@ -9,11 +9,20 @@ if has("autocmd")
 
   autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,*.god} set ft=ruby
+  " autocmd bufreadpre *.md setlocal foldcolumn=4 wrap linebreak textwidth=0 spell spelllang=en " wrapping and padding
+  " autocmd bufreadpre *.md match " prevents trailing whitespace highlighting
+  " autocmd bufreadpre *.md noremap  <buffer> <silent> k gk
+  " autocmd bufreadpre *.md noremap  <buffer> <silent> j gj
+  " autocmd bufreadpre *.md noremap  <buffer> <silent> 0 g0
+  " autocmd bufreadpre *.md noremap  <buffer> <silent> $ g$
+  " autocmd bufreadpre *.md noremap  <buffer> <silent> A g$a
+  " highlight htmlItalic gui=italic guifg=#ff8700 ctermfg=214
 endif
 
 syntax enable
 colorscheme simple
 
+let g:vim_markdown_initial_foldlevel=99
 " Basic Settings
 set backspace=2 " weird backspace issue
 set noswapfile
@@ -34,12 +43,11 @@ set cmdheight=1
 set clipboard+=unnamed
 set laststatus=2
 set ruler
-let g:vim_markdown_initial_foldlevel=99
-let g:netrw_dirhistmax=0
 let NERDSpaceDelims=1
 let mapleader = ","
 let g:netrw_liststyle=3
-let g:netrw_banner = 0
+" let g:netrw_dirhistmax=0
+" let g:netrw_banner = 0
 set signcolumn=yes
 
 " Navigation

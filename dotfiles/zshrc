@@ -23,6 +23,7 @@ done
 
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
+eval "$(pyenv init --path)"
 
 export HISTSIZE=100000
 export SAVEHIST=100000
@@ -56,7 +57,9 @@ setopt prompt_subst
 # PROMPT=' › '
 # PROMPT=' ⨳  '
 # PROMPT='⩕ '
-PROMPT=' %{$fg[cyan]%}⤏ %{$reset_color%} '
+PROMPT='%1d %{$fg[cyan]%}⤏ %{$reset_color%} '
 # PROMPT=' '
 # PROMPT='- '
 # PROMPT='%{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} '
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
