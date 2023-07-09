@@ -1,8 +1,10 @@
 clear
-export EDITOR=vi
+
+export EDITOR="code --wait"
 export DOTFILES=${HOME}/dotfiles
 
 autoload -U colors && colors
+
 # enable tab-completion in cd path
 autoload -U compinit && compinit
 
@@ -16,6 +18,7 @@ function reload() {
 for secret_config in ${DOTFILES}/etc/secret/*.zsh; do
   source $secret_config
 done
+
 # Load all config files
 for config_file in ${DOTFILES}/etc/*.zsh; do
   source $config_file
@@ -32,20 +35,6 @@ export SAVEHIST=100000
 # https://code.visualstudio.com/docs/editor/integrated-terminal#_ctrla-ctrlr-output-a-r-on-zsh
 bindkey -e
 
-export FZF_DEFAULT_COMMAND='
-if [ -d .git ];
-  then echo "$(git ls-files)\n$(git status --untracked-files=all --porcelain | grep "^[A\?]" | cut -c 4-)" | sort | uniq;
-  else find . \
-    -not -path "**/.git/*" \
-    -not -path "**/node_modules/*" \
-    -not -path "**/.next/*" \
-    -not -path "**/tags" \
-    -not -path "**/vendor/*" \
-    -not -path "**/log/*" \
-    -not -path "**/tmp/*" \
-    -type f;
-fi'
-
 # case-insensitive tab autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
@@ -55,15 +44,6 @@ zstyle ':vcs_info:git:*' formats '%b'
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-# PROMPT="%n@%m %1~ %#"
-# PROMPT=' %~ %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} × '
-# PROMPT=' %{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} ⤏  '
-# PROMPT=' › '
-# PROMPT=' ⨳  '
-# PROMPT='⩕ '
 PROMPT='%1d %{$fg[cyan]%}⤏ %{$reset_color%} '
-# PROMPT=' '
-# PROMPT='- '
-# PROMPT='%{$fg[cyan]%}${vcs_info_msg_0_}%{$reset_color%} '
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
