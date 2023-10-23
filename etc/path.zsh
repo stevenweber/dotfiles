@@ -1,2 +1,4 @@
 export GOPATH="$HOME/projects/go"
-export PATH="$GOPATH/bin:$PATH:$DOTFILES/bin:$HOME/bin"
+export VISUAL_STUDIO_CODE_APP="$HOME/Applications/Visual Studio Code.app/Contents/Resources/app"
+
+export PATH="/opt/homebrew/bin:$GOPATH/bin:$PATH:$DOTFILES/bin:${VISUAL_STUDIO_CODE_APP}/bin:$HOME/bin:"
