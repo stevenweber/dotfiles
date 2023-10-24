@@ -14,7 +14,7 @@ $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/dotfiles/%
 
 .PHONY: install-brew
 install-brew:
-	@if hash brew 2>/dev/null; then echo "* Homebrew already installed, skipping"; else echo "Installing Homebrew"; ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; fi
+	@if hash brew 2>/dev/null; then echo "* Homebrew already installed, skipping"; else echo "Installing Homebrew"; /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
 	brew bundle
 
 .PHONY: remove-group-from-zsh
