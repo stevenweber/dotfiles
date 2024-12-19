@@ -1,7 +1,7 @@
 clear
 
 export EDITOR="code --wait"
-export DOTFILES=${HOME}/dotfiles
+export DOTFILES=${HOME}/Documents/dotfiles
 
 autoload -U colors && colors
 
