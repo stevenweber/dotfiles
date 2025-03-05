@@ -1,1 +1,1 @@
-export PGSERVICEFILE=~/dotfiles/etc/secret/pg_service.conf
+export PGSERVICEFILE=~/Documents/dotfiles/etc/secret/pg_service.conf
