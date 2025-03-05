@@ -14,6 +14,32 @@ function reload() {
   . ~/.zshrc
 }
 
+# update ssh key used for github, e.g. for switching between personal and work accounts
+# usage: github-key [path-to-key]
+# if no path is provided, defaults to ~/.ssh/id_ed25519
+function github-key() {
+  ssh-add -D
+
+  if [ ! -f ~/.ssh/config ]; then
+    touch ~/.ssh/config
+  fi
+
+  local new_key_path=${1:-${HOME}/.ssh/id_ed25519}
+
+  if grep -q "Host github.com" ~/.ssh/config; then
+    awk -v new_key_path="$new_key_path" '
+      $1 == "Host" && $2 == "github.com" { in_github_host=1 }
+      in_github_host && $1 == "IdentityFile" { $2 = new_key_path; in_github_host=0 }
+      { print }
+    ' ~/.ssh/config > ~/.ssh/config.tmp && mv ~/.ssh/config.tmp ~/.ssh/config
+  else
+    echo "\nHost github.com\n  IdentityFile $new_key_path" >> ~/.ssh/config
+  fi
+
+  ssh-add ${new_key_path}
+  ssh -T git@github.com
+}
+
 # Load secrets not tracked in git for security, etc.
 for secret_config in ${DOTFILES}/etc/secret/*.zsh; do
   source $secret_config
@@ -28,8 +54,8 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 eval "$(pyenv init --path)"
 
-export HISTSIZE=100000
-export SAVEHIST=100000
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 # prevent vscode vim bindings from mucking with ctr-a etc
 # https://code.visualstudio.com/docs/editor/integrated-terminal#_ctrla-ctrlr-output-a-r-on-zsh
@@ -38,11 +64,6 @@ bindkey -e
 # case-insensitive tab autocomplete
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# git in the prompt
-autoload -Uz vcs_info
-zstyle ':vcs_info:git:*' formats '%b'
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 PROMPT='%1d %{$fg[cyan]%}⤏ %{$reset_color%} '
 
